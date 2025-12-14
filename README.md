@@ -4,7 +4,7 @@
 
 <p align="center">
   <!-- Replace with your logo URL -->
-  <img src="YOUR_LOGO_URL" alt="Iwan Sena Logo" width="140" />
+  <img src="MyProfil.svg" alt="Iwan Sena Logo" width="140" />
 </p>
 
 <h1 align="center">Hi, I’m Iwan Sena 👋</h1>
