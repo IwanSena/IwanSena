@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
   <defs>
-    <!-- Elegant Blue Gradients -->
     <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#6ECBF5"/>
       <stop offset="50%" stop-color="#3A86FF"/>
@@ -13,17 +12,15 @@
     </linearGradient>
     
     <radialGradient id="glowEffect" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#6ECBF5" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#4361EE" stop-opacity="0.1"/>
+      <stop offset="0%" stop-color="#6ECBF5" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#4361EE" stop-opacity="0.05"/>
     </radialGradient>
     
-    <!-- Elegant Pattern -->
     <pattern id="geometricPattern" width="60" height="60" patternUnits="userSpaceOnUse">
       <circle cx="30" cy="30" r="15" fill="none" stroke="#3A86FF" stroke-width="0.5" opacity="0.15"/>
       <circle cx="30" cy="30" r="10" fill="none" stroke="#6ECBF5" stroke-width="0.3" opacity="0.1"/>
     </pattern>
     
-    <!-- Elegant Icon Elements - Diperkecil -->
     <g id="elegantStar">
       <path d="M0,-8 L2.3,-2.3 L8,0 L2.3,2.3 L0,8 L-2.3,2.3 L-8,0 L-2.3,-2.3 Z" 
             fill="#6ECBF5" opacity="0.9">
@@ -31,7 +28,7 @@
       </path>
     </g>
     
-    <g id="techCircle">
+    <g id="techCircle" transform="scale(1.3)">
       <circle cx="0" cy="0" r="15" fill="none" stroke="url(#mainGradient)" stroke-width="2"/>
       <circle cx="0" cy="0" r="12" fill="none" stroke="#00B4D8" stroke-width="1" stroke-dasharray="4,2">
         <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
@@ -41,170 +38,115 @@
       </circle>
     </g>
     
-    <!-- Glow Filter -->
     <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
     
-    <!-- Text Glow -->
     <filter id="textGlow">
-      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <rect id="containerShape" x="10" y="10" width="780" height="380" rx="35" />
+    <clipPath id="mainContainerClip">
+        <use href="#containerShape"/>
+    </clipPath>
   </defs>
   
-  <!-- Background -->
-  <rect width="800" height="400" fill="#0F1C2E"/>
-  <rect width="800" height="400" fill="url(#geometricPattern)"/>
+  <g clip-path="url(#mainContainerClip)">
+      <rect width="800" height="400" fill="#0F1C2E"/>
+      <rect width="800" height="400" fill="url(#geometricPattern)"/>
+      <ellipse cx="400" cy="200" rx="400" ry="200" fill="url(#glowEffect)" opacity="0.6"/>
+  </g>
+
+  <use href="#containerShape" fill="none" stroke="url(#mainGradient)" stroke-width="4" filter="url(#softGlow)"/>
   
-  <!-- Main Glow Effect - Diperkecil -->
-  <ellipse cx="400" cy="200" rx="300" ry="100" fill="url(#glowEffect)" opacity="0.4"/>
-  
-  <!-- Main Container - Diperbesar agar muat semua -->
-  <rect x="120" y="100" width="560" height="200" rx="25" 
-        fill="rgba(15, 28, 46, 0.85)" 
-        stroke="url(#mainGradient)" 
-        stroke-width="3"
-        filter="url(#softGlow)"/>
-  
-  <!-- Decorative Corner Elements - Diatur posisi sesuai border baru -->
-  <g stroke="url(#mainGradient)" stroke-width="2" stroke-linecap="round">
-    <!-- Top-left decorative corner -->
-    <path d="M140,130 L170,130 L140,160" fill="none" opacity="0.7"/>
-    <!-- Top-right decorative corner -->
-    <path d="M660,130 L630,130 L660,160" fill="none" opacity="0.7"/>
-    <!-- Bottom-left decorative corner -->
-    <path d="M140,270 L170,270 L140,240" fill="none" opacity="0.7"/>
-    <!-- Bottom-right decorative corner -->
-    <path d="M660,270 L630,270 L660,240" fill="none" opacity="0.7"/>
+  <g stroke="url(#mainGradient)" stroke-width="2" stroke-linecap="round" transform="translate(0,0)">
+    <path d="M40,30 L80,30 L40,70" fill="none" opacity="0.7"/>
+    <path d="M760,30 L720,30 L760,70" fill="none" opacity="0.7"/>
+    <path d="M40,370 L80,370 L40,330" fill="none" opacity="0.7"/>
+    <path d="M760,370 L720,370 L760,330" fill="none" opacity="0.7"/>
   </g>
   
-  <!-- Left Decorative Element - Diatur posisi -->
-  <g transform="translate(240, 200)">
+  <g transform="translate(80, 200)">
     <use href="#techCircle"/>
-    <!-- Subtle floating elements -->
-    <circle cx="-20" cy="-20" r="3" fill="#6ECBF5" opacity="0.6">
-      <animate attributeName="cy" values="-20;-10;-20" dur="3s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="20" cy="-10" r="2.5" fill="#3A86FF" opacity="0.5">
-      <animate attributeName="cy" values="-10;0;-10" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+    <circle cx="-25" cy="-25" r="4" fill="#6ECBF5" opacity="0.6">
+      <animate attributeName="cy" values="-25;-15;-25" dur="3s" repeatCount="indefinite"/>
     </circle>
   </g>
   
-  <!-- Right Decorative Element - Diatur posisi -->
-  <g transform="translate(560, 200)">
+  <g transform="translate(720, 200)">
     <use href="#techCircle">
       <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="15s" repeatCount="indefinite"/>
     </use>
-    <!-- Subtle floating elements -->
-    <circle cx="15" cy="15" r="3" fill="#00B4D8" opacity="0.6">
-      <animate attributeName="cx" values="15;25;15" dur="3.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="-10" cy="15" r="2" fill="#6ECBF5" opacity="0.5">
-      <animate attributeName="cx" values="-10;-20;-10" dur="4s" repeatCount="indefinite" begin="1s"/>
+    <circle cx="20" cy="20" r="4" fill="#00B4D8" opacity="0.6">
+      <animate attributeName="cx" values="20;30;20" dur="3.5s" repeatCount="indefinite"/>
     </circle>
   </g>
   
-  <!-- Main Logo Text - Font size diperkecil agar muat -->
   <g font-family="'Inter', 'Segoe UI', 'Roboto', sans-serif" text-anchor="middle" filter="url(#textGlow)">
     
-    <!-- "Iwan" Text - Diperkecil -->
-    <text x="400" y="160" 
-          font-size="52" 
-          font-weight="700" 
+    <text x="400" y="155" 
+          font-size="85" 
+          font-weight="800" 
           fill="url(#mainGradient)" 
-          letter-spacing="1">
+          letter-spacing="2">
       Iwan
     </text>
     
-    <!-- "Sena" Text - Diperkecil -->
-    <text x="400" y="220" 
-          font-size="52" 
-          font-weight="700" 
+    <text x="400" y="245" 
+          font-size="85" 
+          font-weight="800" 
           fill="url(#accentGradient)" 
-          letter-spacing="1">
+          letter-spacing="2">
       Sena
     </text>
     
-    <!-- Elegant Divider Line - Diatur posisi -->
-    <line x1="320" y1="175" x2="480" y2="175" 
+    <line x1="280" y1="185" x2="520" y2="185" 
           stroke="url(#mainGradient)" 
-          stroke-width="1.5" 
+          stroke-width="2.5" 
           stroke-linecap="round"
           opacity="0.7"/>
     
-    <!-- Subtle Tagline - Diperkecil -->
-    <text x="400" y="270" 
-          font-size="16" 
-          font-weight="300" 
+    <text x="400" y="295" 
+          font-size="20" 
+          font-weight="400" 
           fill="#8ECAE6" 
-          letter-spacing="2"
+          letter-spacing="4"
           opacity="0.9">
       CODE • CREATE • INSPIRE
     </text>
   </g>
   
-  <!-- Elegant Stars - Diatur posisi sesuai border baru -->
-  <g opacity="0.9">
-    <use href="#elegantStar" x="160" y="160"/>
-    <use href="#elegantStar" x="640" y="160"/>
-    <use href="#elegantStar" x="160" y="240"/>
-    <use href="#elegantStar" x="640" y="240"/>
+  <g opacity="0.8">
+    <use href="#elegantStar" x="60" y="60" transform="scale(1.5)"/>
+    <use href="#elegantStar" x="740" y="60" transform="scale(1.2)"/>
+    <use href="#elegantStar" x="60" y="340" transform="scale(1.2)"/>
+    <use href="#elegantStar" x="740" y="340" transform="scale(1.5)"/>
   </g>
   
-  <!-- Subtle Floating Dots - Diatur posisi -->
-  <g opacity="0.5">
-    <circle cx="150" cy="180" r="1.5" fill="#6ECBF5">
-      <animate attributeName="cy" values="180;190;180" dur="4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="650" cy="180" r="1.5" fill="#3A86FF">
-      <animate attributeName="cy" values="180;190;180" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
-    </circle>
-    <circle cx="150" cy="220" r="1" fill="#00B4D8">
-      <animate attributeName="cy" values="220;210;220" dur="3s" repeatCount="indefinite" begin="1s"/>
-    </circle>
-    <circle cx="650" cy="220" r="1" fill="#6ECBF5">
-      <animate attributeName="cy" values="220;210;220" dur="4s" repeatCount="indefinite" begin="1.5s"/>
-    </circle>
+  <g stroke="url(#mainGradient)" stroke-width="1.5" opacity="0.3">
+    <line x1="60" y1="110" x2="740" y2="110" stroke-dasharray="10,15"/>
+    <line x1="60" y1="280" x2="740" y2="280" stroke-dasharray="10,15"/>
   </g>
   
-  <!-- Elegant Border Lines - Diatur sesuai border baru -->
-  <g stroke="url(#mainGradient)" stroke-width="1" opacity="0.4">
-    <line x1="140" y1="145" x2="660" y2="145" stroke-dasharray="8,4"/>
-    <line x1="140" y1="255" x2="660" y2="255" stroke-dasharray="8,4"/>
-  </g>
-  
-  <!-- Bottom Decorative Line - Diatur posisi lebih ke dalam -->
-  <path d="M280,310 Q400,320 520,310" 
+  <path d="M200,340 Q400,360 600,340" 
         fill="none" 
         stroke="url(#accentGradient)" 
-        stroke-width="2" 
+        stroke-width="3" 
         stroke-linecap="round"
-        opacity="0.7">
+        opacity="0.6">
     <animate attributeName="d" 
-             values="M280,310 Q400,320 520,310; M280,310 Q400,330 520,310; M280,310 Q400,320 520,310" 
+             values="M200,340 Q400,360 600,340; M200,340 Q400,380 600,340; M200,340 Q400,360 600,340" 
              dur="6s" 
              repeatCount="indefinite"/>
   </path>
   
-  <!-- Signature Element - Diatur posisi -->
-  <g transform="translate(400, 350)" opacity="0.8">
-    <path d="M-25,0 Q0,-8 25,0" 
-          fill="none" 
-          stroke="#3A86FF" 
-          stroke-width="1.5" 
-          stroke-linecap="round"/>
-    <circle cx="-25" cy="0" r="1.5" fill="#6ECBF5"/>
-    <circle cx="0" cy="-8" r="1.5" fill="#3A86FF">
-      <animate attributeName="r" values="1.5;2.5;1.5" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="25" cy="0" r="1.5" fill="#6ECBF5"/>
-  </g>
 </svg>
