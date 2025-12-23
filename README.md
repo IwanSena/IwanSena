@@ -43,7 +43,8 @@ I am here to learn, to build, and to preserve meaning in technology.
 Hello — this is Sena.
 
 ---
-
+[![Comment Here](https://img.shields.io/badge/💬%20Leave%20a%20Comment-blue)](https://github.com/IwanSena/IwanSena/issues/1#issue-3758181215)
+---
 ## 🧠 Tech Stack & Interests
 
 <p align="center">
