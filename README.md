@@ -120,7 +120,8 @@ If you find my work meaningful and want to support open-source development:
   <img src="https://img.shields.io/badge/Crypto-Supported-black?style=for-the-badge&logo=bitcoin" />
 </p>
 
-- WebMoney / Visa / MasterCard: https://funding.webmoney.com/donasi/donate  
+- WebMoney / Visa / MasterCard:
+- [![Donate](https://img.shields.io/badge/Support-WebMoney_|_Visa_|_MasterCard-blueviolet?style=for-the-badge&logo=github)](https://funding.webmoney.com/donasi/donate)  
 - Ko-fi: https://ko-fi.com/iwansena  
 - PayPal: https://paypal.me/IwanSena  
 - Trakteer: https://trakteer.id/iwansena/gift  
