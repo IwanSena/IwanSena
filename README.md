@@ -124,7 +124,8 @@ If you find my work meaningful and want to support open-source development:
 - Ko-fi: https://ko-fi.com/iwansena  
 - PayPal: https://paypal.me/IwanSena  
 - Trakteer: https://trakteer.id/iwansena/gift  
-- Crypto (All): https://pay.web.money/d/dxzq  
+- Crypto (All):
+-  [![Donate](https://img.shields.io/badge/₿-Crypto_Donation-orange?style=for-the-badge&logo=bitcoin)](https://iwansena.github.io/Donation)
 
 ---
 
